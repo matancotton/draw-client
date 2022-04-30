@@ -1,0 +1,14 @@
+//general
+@import "./base/general.scss";
+@import "./app.scss";
+
+//views
+@import "./views/waiting";
+
+//components
+@import "./components/card";
+@import "./components/wordsList";
+@import "./components/canvas";
+@import "./components/inbox";
+@import "./components/gameSession";
+
