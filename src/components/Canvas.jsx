@@ -20,17 +20,20 @@ const Canvas = ({ canvasRef, allowedDrawing, paths }) => {
     return (
         <div className='canvas'>
             <ReactSketchCanvas
-            className='canvas-drawing'
+                className='canvas-drawing'
                 ref={canvasRef}
                 strokeWidth={4}
                 strokeColor="black"
-                allowOnlyPointerType={allowedDrawing ?"all" : "none"}
+                allowOnlyPointerType={allowedDrawing ? "all" : "none"}
+                width="300"
+                height="800"
             />
-            {allowedDrawing &&<div>
+            {allowedDrawing && 
+            <div className='controls'>
                 <button className='button red-button' onClick={() => canvasRef.current.resetCanvas()}>reset</button>
                 <button className='button red-button' onClick={() => canvasRef.current.undo()}>undo</button>
-                <button className={ eraseMode ? "button active" : "button" } onClick={() => changeEraseMode(true)}>eraser</button>
-                <button className={ !eraseMode ? "button active" : "button" } onClick={() => changeEraseMode(false)}>pen</button>
+                <button className={eraseMode ? "button active" : "button"} onClick={() => changeEraseMode(true)}>eraser</button>
+                <button className={!eraseMode ? "button active" : "button"} onClick={() => changeEraseMode(false)}>pen</button>
             </div>}
         </div>
     )

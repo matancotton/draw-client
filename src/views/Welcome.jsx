@@ -29,14 +29,18 @@ const Welcome = () => {
         navigate("/lobby")
     }
     return (
-        <>
-            <h1>Welcom To Draw & Guss Game</h1>
-            <h2>Enter a Nickname and Press START to begin</h2>
-            <input type="text" className="input" placeholder="Nickname" value={nickname} onChange={updateNickname} />
-            <p style={{color: 'red', marginTop: 0}}>{ errMsg }</p>
-            <button onClick={startGame} className='button'>START</button>
+        <div className='welcome'>
+            <div>
+                <h1>Welcom To Draw & Guss Game</h1>
+                <h2>Enter a Nickname and Press START to begin</h2>
+            </div>
+            <div className='input-container'>
+                <input type="text" className="input" placeholder="Nickname" value={nickname} onChange={updateNickname} />
+                <p style={{color: 'red', marginTop: 0}}>{ errMsg }</p>
+                <button onClick={startGame} className='button'>START</button>
+            </div>
             <HighScore />
-        </>
+        </div>
     )
 }
 

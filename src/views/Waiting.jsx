@@ -106,7 +106,7 @@ const Waiting = () => {
             }
             {
                 isCorrectAnswer && (
-                    <div>
+                    <div className='submit-buttons'>
                         <button className='button red-button' onClick={quitGame}>Save and Quit</button>
                         <button className='button' onClick={newDrawing}>Send a new drawing</button>
                     </div>

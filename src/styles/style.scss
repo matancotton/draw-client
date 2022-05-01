@@ -3,7 +3,9 @@
 @import "./app.scss";
 
 //views
+@import "./views/welcome";
 @import "./views/waiting";
+@import "./views/drawing";
 
 //components
 @import "./components/card";

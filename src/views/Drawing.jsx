@@ -15,14 +15,14 @@ const Drawing = () => {
         navigate("/waiting")
     }
   return (
-    <>
+    <div className='drawing'>
         <h1>
             Please draw the word
             <span style={{color: 'blue', fontWeight: '400', display: 'block', textAlign: 'center'}}>{ gameState.selectedWord }</span>
         </h1>
         <DrawingCanvas canvasRef={canvasRef} allowedDrawing />
         <button className='button' onClick={sendDrawing}>Send Drawing</button>
-    </>
+    </div>
   )
 }
 

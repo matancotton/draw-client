@@ -1,0 +1,20 @@
+.welcome {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+
+    @media (max-width: 40rem) {
+        justify-content: space-between;
+
+        .input-container {
+            width: 90%;
+
+            .button, .input {
+                width: 100%;
+            }
+        }
+    }
+}

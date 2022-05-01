@@ -11,7 +11,6 @@
     }
 
     .canvas-container {
-        height: 60%;
         width: 100%;
     }
 
@@ -30,6 +29,11 @@
             margin: 0;
         }
     }
+
+    .submit-buttons {
+        display: flex;
+    }
+
     .message {
         font-weight: 700;
         font-size: 18px;
@@ -38,5 +42,29 @@
 
     .error {
         color: red;
+    }
+}
+
+@media (max-width: 40rem) {
+    .waiting-view {
+
+        .guess-box {
+            flex-direction: column;
+            align-items: center;
+
+            .input-container {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+
+            .button {
+                width: 80%;
+            }
+        }
+
+        .submit-buttons {
+            flex-direction: column;
+            width: 80%;
+        }
     }
 }
