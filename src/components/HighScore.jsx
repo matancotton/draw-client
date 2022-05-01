@@ -10,7 +10,7 @@ const HighScore = () => {
        const response = await fetch(process.env.REACT_APP_SERVER_URL+"/high-score")
        const result = await response.json()
        setTime(result.time)
-       setPoints(result.score)
+       setPoints(result.points)
     }
 
     useEffect(() => {
