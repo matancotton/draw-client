@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import { GameContext } from "./components/GameProvider";
 import Inbox from "./components/Inbox";
 import Drawing from "./views/Drawing";
+import GameEnded from "./views/GameEnded";
 import Lobby from "./views/Lobby";
 import Waiting from "./views/Waiting";
 import Welcome from "./views/Welcome";
@@ -27,11 +28,12 @@ function App() {
       <BrowserRouter>
         <Card>
           <Routes>
-            <Route path="/" exact element={<Welcome />} />
-            <Route path="/word-choosing" exact element={renderValidRoute(gameState.nickname === "" || gameState.rival === null, <WordChoosing />)} />
-            <Route path="/lobby" exact element={renderValidRoute(gameState.nickname === "", <Lobby />)} />
-            <Route path="/drawing" exact element={renderValidRoute(gameState.nickname === "" || gameState.selectedWord === null, <Drawing />)} />
-            <Route path="/waiting" exact element={renderValidRoute(gameState.nickname === "", <Waiting />)} />
+            <Route path="/" element={<Welcome />} />
+            <Route path="/word-choosing" element={renderValidRoute(gameState.nickname === "" || gameState.rival === null, <WordChoosing />)} />
+            <Route path="/lobby" element={renderValidRoute(gameState.nickname === "", <Lobby />)} />
+            <Route path="/drawing" element={renderValidRoute(gameState.nickname === "" || gameState.selectedWord === null, <Drawing />)} />
+            <Route path="/waiting" element={renderValidRoute(gameState.nickname === "", <Waiting />)} />
+            <Route path="/game-ended" element={<GameEnded />} />
           </Routes>
         </Card>
         {

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { setRivalAction } from '../actions/gameAction'
-import { setOnlinePlayers } from '../socket'
+import { rivalDisconnectedListener, setOnlinePlayers } from '../socket'
 import { GameContext } from './GameProvider'
 
 const PlayersList = () => {
@@ -11,6 +11,7 @@ const PlayersList = () => {
 
     const selectRival = (rival) => {
         gameDispatch(setRivalAction(rival))
+        rivalDisconnectedListener(rival, gameDispatch, navigate)
         navigate("/word-choosing")
     }
 

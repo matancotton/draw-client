@@ -1,5 +1,5 @@
 import io from 'socket.io-client'
-import { editSessionAction, setIncominDrawingAction } from './actions/gameAction'
+import { editSessionAction, setIncominDrawingAction, setRivalAction } from './actions/gameAction'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
 let socket = null
@@ -29,4 +29,12 @@ export const resciveDrawingSocket = (dispatch) => {
 export const disconnectSocket = (session)=>{
     socket.emit('update-score', session)
     socket.disconnect()
+}
+
+export const rivalDisconnectedListener = (rival, dispatch, navigate) => {
+    socket.on('user-disconnected', (rivalId) => {
+        if (rival?.id === rivalId)
+            dispatch(setRivalAction(null))
+            navigate("/game-ended")
+    })
 }
