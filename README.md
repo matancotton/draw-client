@@ -10,8 +10,8 @@ Hello and welcome to Draw and Guess Game
 - Choose a friend from the online players list, or wait for him to choose you and send you a drawin.
 - Select a word from the list: 
     * first word - difficulty Easy = 1 point
-    * second word - difficulty Medium = 2 points
-    * third word - difficulty Hard = 3 points
+    * second word - difficulty Medium = 3 points
+    * third word - difficulty Hard = 5 points
 - Draw the selected word and send it to your friend.
 - Wait for him to send you his drawin.
 - Guess his drawin.
