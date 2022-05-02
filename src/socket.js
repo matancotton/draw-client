@@ -33,9 +33,10 @@ export const disconnectSocket = (session)=>{
 
 export const rivalDisconnectedListener = (rival, dispatch, navigate) => {
     socket.on('user-disconnected', (rivalId) => {
-        if (rival?.id === rivalId)
+        if (rival?.id === rivalId) {
             dispatch(setRivalAction(null))
             dispatch(setIncominDrawingAction({ drawing: null, socketId: "" }))
             navigate("/game-ended")
+        }
     })
 }
