@@ -14,11 +14,6 @@ function App() {
   const { gameState } = useContext(GameContext)
   const [isInboxVisible, setIsInboxVisible] = useState(false)
 
-  const renderValidRoute = (condition, element) => {
-    if (!condition) return element
-    return <Navigate to="/" replace />
-  }
-
   useEffect(() => {
     if (!!gameState.incomingDrawing.drawing) setIsInboxVisible(true)
   }, [gameState])
@@ -29,11 +24,18 @@ function App() {
         <Card>
           <Routes>
             <Route path="/" element={<Welcome />} />
-            <Route path="/word-choosing" element={renderValidRoute(gameState.nickname === "" || gameState.rival === null, <WordChoosing />)} />
-            <Route path="/lobby" element={renderValidRoute(gameState.nickname === "", <Lobby />)} />
-            <Route path="/drawing" element={renderValidRoute(gameState.nickname === "" || gameState.selectedWord === null, <Drawing />)} />
-            <Route path="/waiting" element={renderValidRoute(gameState.nickname === "", <Waiting />)} />
-            <Route path="/game-ended" element={<GameEnded />} />
+            {
+              gameState.nickname !== "" && (
+                <>
+                <Route path="/word-choosing" element={<WordChoosing />} />
+                <Route path="/lobby" element={<Lobby />} />
+                <Route path="/drawing" element={<Drawing />} />
+                <Route path="/waiting" element={<Waiting />} />
+                <Route path="/game-ended" element={<GameEnded />} />
+                </>
+              )
+            }
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Card>
         {
