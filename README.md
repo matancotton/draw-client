@@ -1,6 +1,6 @@
-# Draw and Guess Game
+# Draw & Guess Game
 
-Hello and welcome to Draw and Guess Game
+Hello and welcome to Draw & Guess Game
 
 ## How to play
 
