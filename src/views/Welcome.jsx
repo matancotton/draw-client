@@ -31,7 +31,7 @@ const Welcome = () => {
     return (
         <div className='welcome'>
             <div>
-                <h1>Welcom To Draw & Guss Game</h1>
+                <h1>Welcome To Draw & Guess Game</h1>
                 <h2>Enter a Nickname and Press START to begin</h2>
             </div>
             <div className='input-container'>
